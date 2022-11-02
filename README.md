@@ -10,8 +10,11 @@ Terraform ==>
 1- we build a network module and also contain the firewall rule to allow ssh connection on VM.
 2- we build a 2 Subnets one to have the VM and the Other was for Cluster.
 3- commands
+
              $ cd GCP-Infra
+             
              $ terraform init
+             
              $ terraform apply
 ---------------------------------------------------------------------------------------------------------------
 GCP ==> 1- connect to your VM by --> gcloud compute ssh --zone "zone" "vm-name"  --tunnel-through-iap --project "project-name"
@@ -39,7 +42,9 @@ GCP ==> 1- connect to your VM by --> gcloud compute ssh --zone "zone" "vm-name" 
 Helm ==> 1- install Helm -->
 
 $ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+
 $ chmod 700 get_helm.sh
+
 $ ./get_helm.sh
 
 2- Create Helm Chart For deploy Jenkins on the cluster 
@@ -52,8 +57,13 @@ $ ./get_helm.sh
             $ heml install "your release name" Jenkins
 ----------------------------------------------------------------------------------------------------------------------------
 5- Kubernetes ==> 
+
  $ kubectl get all
+ 
  get your svc external ip 
+ 
  $ kubectl exec -it "pod name" bash
+ 
  $ cat /var/jenkins_home/secrets/initialAdminPassword
+ 
  Now you are accessing your master jenkins
