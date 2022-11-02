@@ -14,8 +14,11 @@ First the tools we used to build this infrastructure
 ----------------
 
 Terraform ==>
+
 1- we build a network module and also contain the firewall rule to allow ssh connection on VM.
+
 2- we build a 2 Subnets one to have the VM and the Other was for Cluster.
+
 3- commands
 
              $ cd GCP-Infra
